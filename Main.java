@@ -433,6 +433,7 @@ public class Main {
       createWindow();
     }else{
       try{
+        System.out.println("No pirates detected — exiting now.");
         System.exit(0);
       } catch (Exception e) {
       }
@@ -560,3 +561,4 @@ public class Main {
     }
   }
 }
+
