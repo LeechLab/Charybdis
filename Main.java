@@ -436,8 +436,11 @@ public class Main {
       try{
         System.exit(0);
       } catch (Exception e) {
-        System.out.println("Error trying to exit: "+ e.getMessage);
-      }
+      System.err.println(
+        "Error trying to exit " +
+        e.getMessage()
+      );
+    }
     }
   }
 
@@ -562,5 +565,6 @@ public class Main {
     }
   }
 }
+
 
 
