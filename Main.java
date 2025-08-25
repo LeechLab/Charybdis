@@ -431,6 +431,8 @@ public class Main {
     if (pirateDetects) {
       errcode = 1;
       createWindow();
+    }else{
+        System.exit(0);
     }
   }
 
@@ -547,8 +549,6 @@ public class Main {
         System.out.println(line);
         if (line.toLowerCase().contains("Pirate on board")) {
           pirateDetects = true;
-        }else{
-          System.exit(0);
         }
       }
       process.waitFor();
@@ -557,5 +557,6 @@ public class Main {
     }
   }
 }
+
 
 
