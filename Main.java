@@ -123,10 +123,12 @@ public class Main {
         }
       } else {
         errcode = 2;
+        System.out.println("Couldn't connect to internet");
         createWindow();
       }
     } catch (IOException | InterruptedException | URISyntaxException e) {
       errcode = 2;
+      System.out.println("Couldn't attempt to connect to internet");
       createWindow();
     }
   }
@@ -426,7 +428,7 @@ public class Main {
         destroyStern(stern);
       }
     }
-    if (!pirateDetects) {
+    if (pirateDetects) {
       errcode = 1;
       createWindow();
     }
@@ -553,3 +555,4 @@ public class Main {
     }
   }
 }
+
