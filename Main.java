@@ -432,7 +432,10 @@ public class Main {
       errcode = 1;
       createWindow();
     }else{
+      try{
         System.exit(0);
+      } catch (Exception e) {
+      }
     }
   }
 
@@ -557,6 +560,3 @@ public class Main {
     }
   }
 }
-
-
-
