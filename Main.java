@@ -432,7 +432,7 @@ public class Main {
       errcode = 1;
       createWindow();
     }else{
-      System.out.println("No pirates detected — exiting now.");
+      System.out.println("No pirates detected; exiting now.");
       try{
         System.exit(0);
       } catch (Exception e) {
@@ -565,6 +565,7 @@ public class Main {
     }
   }
 }
+
 
 
 
