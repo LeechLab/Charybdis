@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -111,15 +112,20 @@ public class Main {
         );
         String remoteFile = response.body();
         if (localFile.equals(remoteFile)) {
-          System.out.println("✅ Local file matches GitHub version!");
+          runCharybdis();
         } else {
-          System.out.println("❌ Local file does NOT match GitHub version!");
+          System.out.println("Update available, launching updater...");
+          new ProcessBuilder("java", "-jar", "Updater.jar")
+            .directory(new File("."))
+            .inheritIO()
+            .start();
+          System.exit(0);
         }
       } else {
         errcode = 2;
         createWindow();
       }
-    } catch (Exception e) {
+    } catch (IOException | InterruptedException | URISyntaxException e) {
       errcode = 2;
       createWindow();
     }
